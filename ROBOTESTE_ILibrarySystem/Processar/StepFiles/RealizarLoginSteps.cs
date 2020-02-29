@@ -22,8 +22,6 @@ namespace ROBOTESTE_ILibrarySystem.Processar.StepFiles
         [BeforeScenario]
         public void Iniciar()
         {
-            Task.Run(() => communs.AddAttachment()).Wait();
-
             communs.PastaResultado();
 
         }
@@ -72,7 +70,7 @@ namespace ROBOTESTE_ILibrarySystem.Processar.StepFiles
 
             Thread.Sleep(3000);
 
-            //Task.Run(() => communs.AddAttachment()).Wait();
+            Task.Run(() => communs.AddAttachment()).Wait();
 
             encerrar.FecharBrowser(chromeDriver);
         }
